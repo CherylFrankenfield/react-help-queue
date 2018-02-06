@@ -13,8 +13,8 @@
 // export default Ticket;
 
 
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Ticket(props){
   return (

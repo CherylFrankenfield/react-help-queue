@@ -11,6 +11,8 @@ module.exports = {
     resolve(__dirname, "src", "index.jsx")
   ],
 
+//only-dev-server doesn’t reload the browser upon syntax errors. This is recommended for React apps because it keeps the state. If you are using the CLI with — inline and — hot, dev-server is automatically added (and not the only-dev-server)
+
   output: {
     filename: 'app.bundle.js',
     path: resolve(__dirname, 'build'),
@@ -32,6 +34,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.jsx?$/,
+        enforce: "pre",
+        loader: "eslint-loader",
+        exclude: /node_modules/,
+        options: {
+          emitWarning: true,
+          configFile: "./.eslintrc.json"
+          }
+        },
+        {
         test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,
