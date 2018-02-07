@@ -6,7 +6,7 @@ module.exports = {
 
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8081',
+    'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
     resolve(__dirname, "src", "index.jsx")
   ],
@@ -53,7 +53,8 @@ module.exports = {
             "react",
           ],
           plugins: [
-            "react-hot-loader/babel"
+            "react-hot-loader/babel",
+            "styled-jsx/babel"
           ]
         }
       }
