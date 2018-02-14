@@ -13,7 +13,7 @@ class NewTicketControl extends React.Component {
     };
     this.handleTroubleshootingConfirmation = this.handleTroubleshootingConfirmation.bind(this);
   }
-//bind.this - keeps it in scope  
+  //bind.this - keeps it in scope  
 
   handleTroubleshootingConfirmation(){
     this.setState({formVisibleOnPage: true});
