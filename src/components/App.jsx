@@ -19,6 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log('componentDidMount');
     this.waitTimeUpdateTimer = setInterval(() =>
       this.updateTicketElapsedWaitTime(),
     60000
@@ -26,11 +27,32 @@ class App extends React.Component {
   }
 
   componentWillUnmount(){
+    console.log('componentWillUnmount');
     clearInterval(this.waitTimeUpdateTimer);
   }
 
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
+
+  componentWillReceiveProps() {
+    console.log('componentWillReceiveProps');
+  }
+
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate');
+    return true;
+  }
+
+  componentWillUpdate() {
+    console.log('componentWillUpdate');
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+
   updateTicketElapsedWaitTime() {
-    console.log('check');
     let newMasterTicketList = this.state.masterTicketList.slice();
     newMasterTicketList.forEach((ticket) =>
       ticket.formattedWaitTime = (ticket.timeOpen).fromNow(true)
