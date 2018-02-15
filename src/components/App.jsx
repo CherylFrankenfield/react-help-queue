@@ -6,6 +6,7 @@ import Admin from './Admin';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Moment from 'moment';
+import { v4 } from 'uuid';
 
 class App extends React.Component {
 
@@ -62,6 +63,7 @@ class App extends React.Component {
   }
 
   handleAddingNewTicketToList(newTicket){
+    let newTicketId = v4()
     let newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
       [newTicket.id]: newTicket
     });
