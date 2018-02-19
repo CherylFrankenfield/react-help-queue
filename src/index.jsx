@@ -12,11 +12,11 @@ const store = createStore(ticketListReducer);
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
       <HashRouter>
-        <Component/>
-      </HashRouter>
-    </AppContainer>,
+        <Provider store={store}>
+          <Component/>
+        </Provider>
+      </HashRouter>,
     document.getElementById('react-app-root')
   );
 };
