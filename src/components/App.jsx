@@ -33,26 +33,26 @@ class App extends React.Component {
     clearInterval(this.waitTimeUpdateTimer);
   }
 
-  componentWillMount() {
-    console.log('componentWillMount');
-  }
-
-  componentWillReceiveProps() {
-    console.log('componentWillReceiveProps');
-  }
-
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate');
-    return true;
-  }
-
-  componentWillUpdate() {
-    console.log('componentWillUpdate');
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
+  // componentWillMount() {
+  //   console.log('componentWillMount');
+  // }
+  //
+  // componentWillReceiveProps() {
+  //   console.log('componentWillReceiveProps');
+  // }
+  //
+  // shouldComponentUpdate() {
+  //   console.log('shouldComponentUpdate');
+  //   return true;
+  // }
+  //
+  // componentWillUpdate() {
+  //   console.log('componentWillUpdate');
+  // }
+  //
+  // componentDidUpdate() {
+  //   console.log('componentDidUpdate');
+  // }
 
   updateTicketElapsedWaitTime() {
     let newMasterTicketList = Object.assign({}, this.state.masterTicketList);
@@ -63,7 +63,7 @@ class App extends React.Component {
   }
 
   handleAddingNewTicketToList(newTicket){
-    let newTicketId = v4()
+    let newTicketId = v4();
     let newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
       [newTicket.id]: newTicket
     });
@@ -76,7 +76,7 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.state.masterTicketList);
+    // console.log(this.state.masterTicketList);
     return (
       <div>
         <Header/>

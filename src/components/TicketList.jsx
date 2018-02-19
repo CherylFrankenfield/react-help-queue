@@ -9,13 +9,13 @@ function TicketList(props){
       {Object.keys(props.ticketList).map(function(ticketId) {
         let ticket = props.ticketList[ticketId];
         return <Ticket names={ticket.names}
-        location={ticket.location}
-        issue={ticket.issue}
-        formattedWaitTime={ticket.formattedWaitTime}
-        currentRouterPath={props.currentRouterPath}
-        key={ticketId}
-        ticketId={ticketId}
-        onTicketSelection={props.onTicketSelection}/>;
+          location={ticket.location}
+          issue={ticket.issue}
+          formattedWaitTime={ticket.formattedWaitTime}
+          currentRouterPath={props.currentRouterPath}
+          key={ticketId}
+          ticketId={ticketId}
+          onTicketSelection={props.onTicketSelection}/>;
       })}
     </div>
   );
