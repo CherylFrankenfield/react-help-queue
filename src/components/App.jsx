@@ -12,6 +12,7 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
+    // console.log(props);
     this.state = {
       masterTicketList: {},
       selectedTicket: null
@@ -93,5 +94,10 @@ class App extends React.Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    masterTicketList: state
+  }
+}
 
-export default connect()(App);
+export default connect(mapStateToProps)(App);
