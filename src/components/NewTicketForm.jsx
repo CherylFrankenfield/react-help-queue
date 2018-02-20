@@ -2,7 +2,6 @@ import React from 'react';
 import Moment from 'moment';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';
-import PropType from 'prop-types';
 
 function NewTicketForm(props){
   let _names = null;
@@ -49,9 +48,6 @@ function NewTicketForm(props){
   );
 }
 
-App.propTypes = {
-  masterTicketList: PropTypes.object
-};
 export default connect()(NewTicketForm);
 
 //Write in two lines or combine like above:

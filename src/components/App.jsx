@@ -4,9 +4,10 @@ import TicketList from './TicketList';
 import NewTicketControl from './NewTicketControl';
 import Admin from './Admin';
 import Error404 from './Error404';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import Moment from 'moment';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
 
@@ -14,7 +15,6 @@ class App extends React.Component {
     super(props);
     // console.log(props);
     this.state = {
-      masterTicketList: {},
       selectedTicket: null
     };
     // this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
@@ -55,13 +55,14 @@ class App extends React.Component {
   //   console.log('componentDidUpdate');
   // }
 
-  updateTicketElapsedWaitTime() {
-    let newMasterTicketList = Object.assign({}, this.state.masterTicketList);
-    Object.keys(newMasterTicketList).forEach(ticketId => {
-      newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
-    });
-    this.setState({masterTicketList: newMasterTicketList});
-  }
+//commented out for now: will revisit.
+  // updateTicketElapsedWaitTime() {
+  //   let newMasterTicketList = Object.assign({}, this.state.masterTicketList);
+  //   Object.keys(newMasterTicketList).forEach(ticketId => {
+  //     newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
+  //   });
+  //   this.setState({masterTicketList: newMasterTicketList});
+  // }
 
   // Refactor using redux, no longer need:
   // handleAddingNewTicketToList(newTicket){
@@ -97,7 +98,11 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return {
     masterTicketList: state
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps)(App);
+App.propTypes = {
+  masterTicketList: PropTypes.object
+};
+
+export default withRouter(connect(mapStateToProps)(App));
