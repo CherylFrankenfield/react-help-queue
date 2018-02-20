@@ -61,7 +61,7 @@ class App extends React.Component {
     this.setState({masterTicketList: newMasterTicketList});
   }
 
-// Refactor using redux, no longer need:
+  // Refactor using redux, no longer need:
   // handleAddingNewTicketToList(newTicket){
   //   let newTicketId = v4();
   //   let newMasterTicketList = Object.assign({}, this.state.masterTicketList, {
@@ -82,7 +82,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList} />} />
-          <Route path='/newticket' render={()=><NewTicketControl />
+          <Route path='/newticket' render={()=><NewTicketControl />} />
           <Route path='/admin' render={(props)=><Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname}
             onTicketSelection={this.handleChangingSelectedTicket}
             selectedTicket={this.state.selectedTicket}/>} />
