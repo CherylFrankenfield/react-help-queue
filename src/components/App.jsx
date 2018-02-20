@@ -6,7 +6,6 @@ import Admin from './Admin';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 import Moment from 'moment';
-import { v4 } from 'uuid';
 
 class App extends React.Component {
 
