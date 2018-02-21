@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 function Ticket(props){
 
   function handleSavingSelectedTicket(ticketId){
-    const {dispatch} = props
+    const {dispatch} = props;
     const action = {
       type: 'SELECT_TICKET',
       ticketId: ticketId

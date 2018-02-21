@@ -45,7 +45,7 @@ class App extends React.Component {
   //   console.log('componentDidUpdate');
   // }
 
-//commented out for now: will revisit.
+  //commented out for now: will revisit.
   // updateTicketElapsedWaitTime() {
   //   let newMasterTicketList = Object.assign({}, this.state.masterTicketList);
   //   Object.keys(newMasterTicketList).forEach(ticketId => {
@@ -65,7 +65,7 @@ class App extends React.Component {
   // }
 
   render(){
-    console.log(this.state.masterTicketList);
+    // console.log(this.state.masterTicketList);
     return (
       <div>
         <Header/>
